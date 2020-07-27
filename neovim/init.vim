@@ -4,6 +4,7 @@ Plug 'scrooloose/nerdtree',
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'morhetz/gruvbox',
 Plug 'jiangmiao/auto-pairs',
+Plug 'junegunn/goyo.vim',
 
 call plug#end()
 
