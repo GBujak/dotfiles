@@ -1,3 +1,6 @@
-cp ../tmux/tmux.conf ~/.tmux.conf
+cd
+git clone https://github.com/gpakosz/.tmux.git
+ln -s -f .tmux/.tmux.conf
+cp .tmux/.tmux.conf.local .
 
 echo "tmux config installed"
