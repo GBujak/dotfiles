@@ -5,6 +5,8 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'morhetz/gruvbox',
 Plug 'jiangmiao/auto-pairs',
 Plug 'junegunn/goyo.vim',
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim',
 
 call plug#end()
 
@@ -14,6 +16,13 @@ let g:gruvbox_italic=1
 set background=dark
 colorscheme gruvbox
 
+" My bindings
+
+let mapleader = ' '
+nnoremap <leader>t :NERDTreeToggle<CR>
+nnoremap <leader>z :GFiles<CR>
+
+" Default coc-nvim bindings
 " General
 set number	" Show line numbers
 set linebreak	" Break lines at word (requires Wrap lines)
