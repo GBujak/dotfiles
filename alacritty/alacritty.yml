@@ -15,6 +15,11 @@ window:
     x: 0
     y: 0
 
+# Shift + space inserts underscore
+
+key_bindings:
+  - { key: Space, mods: Shift, chars: "_" }
+
 # Colors (Gruvbox dark)
 colors:
   # Default colors
