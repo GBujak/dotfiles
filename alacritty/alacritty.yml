@@ -1,4 +1,19 @@
 # Configuration for Alacritty, the GPU enhanced terminal emulator.
+#
+# Fonts
+font:
+    normal:
+        family: Ubuntu Mono
+    size: 14
+
+# Starting window size
+window:
+  dimensions:
+    columns: 100
+    lines: 40
+  padding:
+    x: 0
+    y: 0
 
 # Colors (Gruvbox dark)
 colors:
@@ -30,15 +45,3 @@ colors:
     magenta: '#d3869b'
     cyan:    '#8ec07c'
     white:   '#ebdbb2'
-
-# Fonts
-
-font:
-    normal:
-        family: Ubuntu Mono
-    size: 14
-
-# Starting window size
-dimensions:
-  columns: 80
-  lines: 40
