@@ -22,6 +22,13 @@ let mapleader = ' '
 nnoremap <leader>t :NERDTreeToggle<CR>
 nnoremap <leader>z :GFiles<CR>
 
+" Wrap text in markdown files
+
+augroup auFileTypes
+  autocmd!
+  autocmd FileType markdown setlocal textwidth=85
+augroup end
+
 " Default coc-nvim bindings
 " General
 set number	" Show line numbers
