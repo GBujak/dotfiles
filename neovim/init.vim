@@ -16,11 +16,14 @@ let g:gruvbox_italic=1
 set background=dark
 colorscheme gruvbox
 
+let g:goyo_width=100
+
 " My bindings
 
 let mapleader = ' '
 nnoremap <leader>t :NERDTreeToggle<CR>
 nnoremap <leader>z :GFiles<CR>
+nnoremap <leader>g :Goyo<CR>
 
 " Wrap text in markdown files
 
