@@ -13,7 +13,7 @@ call plug#end()
 let g:gruvbox_contrast_light = 'hard'
 set termguicolors
 let g:gruvbox_italic=1
-set background=dark
+set background=light
 colorscheme gruvbox
 
 let g:goyo_width=100
