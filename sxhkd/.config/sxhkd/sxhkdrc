@@ -8,7 +8,7 @@ super + Return
 
 # program launcher
 super + @space
-	rofi -show run
+	rofi -show combi
 
 # make sxhkd reload its configuration files:
 super + Escape
@@ -119,3 +119,17 @@ super + alt + shift + {h,j,k,l}
 # move a floating window
 super + {Left,Down,Up,Right}
 	bspc node -v {-20 0,0 20,0 -20,20 0}
+
+
+#
+# multimedia
+#
+
+# volume control
+XF86Audio{LowerVolume,RaiseVolume,Mute}
+    pamixer {-d 5,-i 5,-t}
+
+# media control
+XF86Audio{Next,Prev,Play,Stop}
+    playerctl {next,previous,play-pause,stop}
+
