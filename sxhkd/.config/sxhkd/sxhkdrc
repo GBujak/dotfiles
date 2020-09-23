@@ -133,3 +133,5 @@ XF86Audio{LowerVolume,RaiseVolume,Mute}
 XF86Audio{Next,Prev,Play,Stop}
     playerctl {next,previous,play-pause,stop}
 
+super + alt + \
+    mpv_clip
