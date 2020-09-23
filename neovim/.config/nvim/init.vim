@@ -28,7 +28,6 @@ nnoremap <leader>g :Goyo<CR>
 " Terminal emulator
 nnoremap <leader>r :split<CR><C-w>j:terminal<CR>i
 tnoremap <ESC> <C-\><C-n>
-tnoremap <leader><ESC> <C-\><C-n>:q<CR>
 
 " Wrap text in markdown files
 
