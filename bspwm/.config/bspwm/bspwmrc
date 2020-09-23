@@ -3,6 +3,7 @@
 compton &
 polybar example &
 nitrogen --restore &
+redshift &
 
 setxkbmap -option "caps:swapescape" &
 xset r rate 200 25 &
