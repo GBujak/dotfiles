@@ -13,7 +13,7 @@ call plug#end()
 let g:gruvbox_contrast_light = 'hard'
 set termguicolors
 let g:gruvbox_italic=1
-set background=light
+set background=dark
 colorscheme gruvbox
 
 let g:goyo_width=100
@@ -24,6 +24,12 @@ let mapleader = ' '
 nnoremap <leader>t :NERDTreeToggle<CR>
 nnoremap <leader>z :GFiles<CR>
 nnoremap <leader>g :Goyo<CR>
+
+" Terminal emulator
+nnoremap <leader>r :split<CR><C-w>j:terminal<CR>i
+tnoremap <Esc> <C-\><C-n> :q <CR>
+
+
 
 " Wrap text in markdown files
 
