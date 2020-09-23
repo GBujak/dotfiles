@@ -8,6 +8,7 @@ redshift &
 setxkbmap -option "caps:swapescape" &
 xsetroot -cursor_name left_ptr &
 xset r rate 200 25 &
+xinput set-prop 'SynPS/2 Synaptics TouchPad' 'libinput Tapping Enabled' 1 &
 
 pgrep -x sxhkd > /dev/null || sxhkd &
 
