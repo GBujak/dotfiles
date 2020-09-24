@@ -1,6 +1,6 @@
 #! /bin/sh
 
-compton &
+picom &
 polybar example &
 nitrogen --restore &
 redshift &
