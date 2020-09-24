@@ -132,6 +132,10 @@ super + Home
 XF86Audio{LowerVolume,RaiseVolume,Mute}
     pamixer {-d 5,-i 5,-t}
 
+# brightness control
+XF86MonBrightness{Up,Down}
+    xbacklight {-inc 5, -dec 5}
+
 # media control
 XF86Audio{Next,Prev,Play,Stop}
     playerctl {next,previous,play-pause,stop}
@@ -141,3 +145,4 @@ super + alt + \
 
 Print
     sleep 0.2; maim -s -u | xclip -selection clipboard -t image/png -i
+
