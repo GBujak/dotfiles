@@ -11,6 +11,7 @@ Plug 'junegunn/fzf.vim',
 call plug#end()
 
 let g:gruvbox_contrast_light = 'hard'
+let g:gruvbox_contrast_dark = 'hard'
 set termguicolors
 let g:gruvbox_italic=1
 set background=dark
