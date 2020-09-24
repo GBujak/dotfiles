@@ -140,8 +140,8 @@ XF86MonBrightness{Up,Down}
 XF86Audio{Next,Prev,Play,Stop}
     playerctl {next,previous,play-pause,stop}
 
-super + alt + \
-    mpv_clip
+super + shift + m
+    /home/gbujak/bin/mpv_clip
 
 Print
     sleep 0.2; maim -s -u | xclip -selection clipboard -t image/png -i
