@@ -5,6 +5,8 @@ polybar example &
 nitrogen --restore &
 redshift &
 
+wmname LG3D & # Fix java GUIs (intellij idea) not working with window managers
+
 setxkbmap -option "caps:swapescape" &
 xsetroot -cursor_name left_ptr &
 xset r rate 200 25 &
