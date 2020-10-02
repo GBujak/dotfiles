@@ -1,0 +1,8 @@
+#!/bin/sh
+
+wkhtmltoimage \
+    --minimum-font-size 30 \
+    http://plany.tu.kielce.pl/resource/g4635.html \
+    ~/Pictures/plan.png || exit 1;
+
+feh ~/Pictures/plan.png -F;
