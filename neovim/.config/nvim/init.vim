@@ -14,7 +14,7 @@ let g:gruvbox_contrast_light = 'hard'
 let g:gruvbox_contrast_dark = 'hard'
 set termguicolors
 let g:gruvbox_italic=1
-set background=light " <-- toggle theme
+set background=dark " <-- toggle theme
 colorscheme gruvbox
 
 let g:goyo_width=100
