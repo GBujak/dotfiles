@@ -7,6 +7,8 @@ Plug 'jiangmiao/auto-pairs',
 Plug 'junegunn/goyo.vim',
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim',
+Plug 'vim-pandoc/vim-pandoc',
+Plug 'vim-pandoc/vim-pandoc-syntax',
 
 call plug#end()
 
@@ -32,10 +34,15 @@ tnoremap <ESC> <C-\><C-n>
 
 " Wrap text in markdown files
 
-augroup auFileTypes
-  autocmd!
-  autocmd FileType markdown setlocal textwidth=85
-augroup end
+" augroup auFileTypes
+"   autocmd!
+"   autocmd FileType markdown setlocal textwidth=85
+" augroup end
+
+" Pandoc
+
+let g:pandoc#formatting#mode = "h"
+let g:pandoc#spell#default_langs = ['en', 'pl']
 
 " Default coc-nvim bindings
 " General
