@@ -7,8 +7,8 @@ Plug 'jiangmiao/auto-pairs',
 Plug 'junegunn/goyo.vim',
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim',
-Plug 'vim-pandoc/vim-pandoc',
-Plug 'vim-pandoc/vim-pandoc-syntax',
+Plug 'godlygeek/tabular',
+Plug 'plasticboy/vim-markdown',
 
 call plug#end()
 
@@ -32,17 +32,30 @@ nnoremap <leader>g :Goyo<CR>
 nnoremap <leader>r :split<CR><C-w>j:terminal<CR>i
 tnoremap <ESC> <C-\><C-n>
 
-" Wrap text in markdown files
+" Markown configuration
 
-" augroup auFileTypes
-"   autocmd!
-"   autocmd FileType markdown setlocal textwidth=85
-" augroup end
+" Line wrapping
+augroup auFileTypes
+  autocmd!
+  autocmd FileType markdown setlocal textwidth=85
+augroup end
 
-" Pandoc
+" Syntax concealing
+set conceallevel=2
 
-let g:pandoc#formatting#mode = "h"
-let g:pandoc#spell#default_langs = ['en', 'pl']
+" Other
+let g:vim_markdown_math = 1
+let g:vim_markdown_frontmatter = 1
+" Follow links that lead to non-markdown files
+let g:vim_markdown_no_extensions_in_markdown = 1
+
+" Don't insert bullet points or indent (for text wrapping)
+" let g:vim_markdown_auto_insert_bullets = 0
+" let g:vim_markdown_new_list_item_indent = 0
+
+" Table of contents window
+nnoremap <leader>T :Toc<CR>
+
 
 " Default coc-nvim bindings
 " General
