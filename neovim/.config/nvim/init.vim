@@ -44,6 +44,7 @@ augroup end
 set conceallevel=2
 
 " Other
+let g:vim_markdown_folding_disabled = 1
 let g:vim_markdown_math = 1
 let g:vim_markdown_frontmatter = 1
 " Follow links that lead to non-markdown files
