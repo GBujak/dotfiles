@@ -9,6 +9,7 @@ Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim',
 Plug 'godlygeek/tabular',
 Plug 'plasticboy/vim-markdown',
+Plug 'kassio/neoterm',
 
 call plug#end()
 
@@ -24,16 +25,15 @@ let g:goyo_width=100
 " My bindings
 
 let mapleader = ' '
-nnoremap <leader>t :NERDTreeToggle<CR>
+nnoremap <leader>T :NERDTreeToggle<CR>
 nnoremap <leader>z :GFiles<CR>
 nnoremap <leader>g :Goyo<CR>
 
 " Terminal emulator
-nnoremap <leader>r :split<CR><C-w>j:terminal<CR>i
-tnoremap <ESC> <C-\><C-n>
+nnoremap <leader>t :split<CR><C-w>j:Topen<CR>i
+tnoremap <ESC> <C-\><C-n>:q<CR>
 
 " Markown configuration
-
 " Line wrapping
 augroup auFileTypes
   autocmd!
@@ -53,9 +53,6 @@ let g:vim_markdown_no_extensions_in_markdown = 1
 " Don't insert bullet points or indent (for text wrapping)
 " let g:vim_markdown_auto_insert_bullets = 0
 " let g:vim_markdown_new_list_item_indent = 0
-
-" Table of contents window
-nnoremap <leader>T :Toc<CR>
 
 
 " Default coc-nvim bindings
