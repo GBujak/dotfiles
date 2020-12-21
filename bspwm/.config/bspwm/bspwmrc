@@ -1,9 +1,9 @@
 #! /bin/sh
 
-picom &
+# picom &
 polybar example &
 nitrogen --restore &
-redshift &
+# redshift &
 nm-applet &
 setxkbmap pl &
 
