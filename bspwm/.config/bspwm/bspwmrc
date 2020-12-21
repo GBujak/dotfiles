@@ -5,6 +5,7 @@ polybar example &
 nitrogen --restore &
 redshift &
 nm-applet &
+setxkbmap pl &
 
 wmname LG3D & # Fix java GUIs (intellij idea) not working with window managers
 
