@@ -130,7 +130,7 @@ super + Home
 
 # volume control
 XF86Audio{LowerVolume,RaiseVolume,Mute}
-    pamixer {-d 5,-i 5,-t}
+    amixer -q sset Master {5%-,5%+,toggle}
 
 # brightness control
 XF86MonBrightness{Up,Down}
