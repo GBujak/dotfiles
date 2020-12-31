@@ -134,7 +134,7 @@ XF86Audio{LowerVolume,RaiseVolume,Mute}
 
 # brightness control
 XF86MonBrightness{Up,Down}
-    xbacklight {-inc 5, -dec 5}
+    light {-A 5, -U 5}
 
 # media control
 XF86Audio{Next,Prev,Play,Stop}
