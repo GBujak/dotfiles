@@ -17,8 +17,11 @@ let g:gruvbox_contrast_light = 'hard'
 let g:gruvbox_contrast_dark = 'hard'
 set termguicolors
 let g:gruvbox_italic=1
-set background=dark " <-- toggle theme
+set background="light" "<-- toggle theme
 colorscheme gruvbox
+
+" fzf.vim file preview theme
+let $BAT_THEME='Monokai Extended Light'
 
 let g:goyo_width=100
 
@@ -234,3 +237,4 @@ nnoremap <silent><nowait> <space>j  :<C-u>CocNext<CR>
 nnoremap <silent><nowait> <space>k  :<C-u>CocPrev<CR>
 " Resume latest coc list.
 nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
+
