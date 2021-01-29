@@ -14,6 +14,7 @@ window:
   padding:
     x: 0
     y: 0
+  gtk_theme_variant: dark
 
 # Shift + space inserts underscore
 
@@ -72,5 +73,5 @@ schemes:
       cyan:    '0x8ec07c'
       white:   '0xebdbb2'
 
-colors: *light
+colors: *dark
 
