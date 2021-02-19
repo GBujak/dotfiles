@@ -1,0 +1,3 @@
+#!/bin/zsh
+
+nautilus . >/dev/null 2>/dev/null &!
