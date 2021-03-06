@@ -5,6 +5,7 @@ nitrogen --restore &
 nm-applet &
 setxkbmap pl &
 xfsettingsd &
+picom &
 
 wmname LG3D & # Fix java GUIs (intellij idea) not working with window managers
 
