@@ -1,5 +1,6 @@
 # Set the theme to "TwoDark"
-# --theme="GitHub"
+#--theme="GitHub"
+--theme="Zenburn"
 
 # Use italic text on the terminal (not supported on all terminals)
 --italic-text=always
