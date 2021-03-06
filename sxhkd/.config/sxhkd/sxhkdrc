@@ -38,6 +38,10 @@ super + y
 super + g
 	bspc node -s biggest.window
 
+# rotate selected tree
+super + r
+        bspc node -R 90
+
 #
 # state/flags
 #
@@ -146,3 +150,5 @@ super + shift + m
 Print
     sleep 0.2; maim -s -u | xclip -selection clipboard -t image/png -i
 
+super + control + shift + r
+        bash -c "redshift -x ; redshift -O $(rofi -dmenu -p 'New redshift frequency')"

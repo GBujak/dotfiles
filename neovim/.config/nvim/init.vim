@@ -60,7 +60,7 @@ let g:vim_markdown_new_list_item_indent = 0
 
 " Default coc-nvim bindings
 " General
-set number	" Show line numbers
+set number relativenumber	" Show line numbers
 set linebreak	" Break lines at word (requires Wrap lines)
 set showbreak=+++	" Wrap-broken line prefix
 set textwidth=100	" Line wrap (number of cols)
