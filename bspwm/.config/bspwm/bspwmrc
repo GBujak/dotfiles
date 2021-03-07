@@ -12,7 +12,8 @@ wmname LG3D & # Fix java GUIs (intellij idea) not working with window managers
 xsetroot -cursor_name left_ptr &
 xset r rate 200 25 &
 xinput set-prop 'SynPS/2 Synaptics TouchPad' 'libinput Tapping Enabled' 1 &
-setxkbmap -option "caps:swapescape" &
+
+bash -c "sleep 5; setxkbmap -option 'caps:swapescape'" &
 
 pgrep -x sxhkd > /dev/null || sxhkd &
 
