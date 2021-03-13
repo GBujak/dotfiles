@@ -29,7 +29,7 @@ let g:goyo_width=100
 
 let mapleader = ' '
 nnoremap <leader>T :NERDTreeToggle<CR>
-nnoremap <leader>z :GFiles<CR>
+nnoremap <leader>z :GFiles -o -c<CR>
 nnoremap <leader>g :Goyo<CR>
 
 " Terminal emulator
