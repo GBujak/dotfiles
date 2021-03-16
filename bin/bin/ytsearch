@@ -1,0 +1,31 @@
+#!/bin/python
+
+from os import system
+from sys import argv, exit
+argv = argv[1:]
+
+audio = False
+volume = 100
+searches = []
+
+for index, val in enumerate([i for i in argv]):
+    if val == 'a':
+        audio = True
+    elif val == 'vol' and index < len(argv) - 1:
+        try:
+            volume = int(argv[index + 1])
+        except:
+            print("The next option after `vol` must be an integer")
+            exit(1)
+    else:
+        searches.append(val)
+
+no_video = ""
+if audio: no_video = "--no-video"
+
+search = " ".join(searches)
+
+command = f"mpv ytdl://ytsearch:\"{search}\" {no_video} --volume={volume}"
+print(f"Executing: {command}")
+
+exit(system(command))
