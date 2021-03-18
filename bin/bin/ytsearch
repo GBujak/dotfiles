@@ -7,6 +7,7 @@ argv = argv[1:]
 audio = False
 volume = 100
 searches = []
+searches_dont_include = []
 
 for index, val in enumerate([i for i in argv]):
     if val == 'a':
@@ -14,10 +15,11 @@ for index, val in enumerate([i for i in argv]):
     elif val == 'vol' and index < len(argv) - 1:
         try:
             volume = int(argv[index + 1])
+            searches_dont_include.append(index + 1)
         except:
             print("The next option after `vol` must be an integer")
             exit(1)
-    else:
+    elif index not in searches_dont_include:
         searches.append(val)
 
 no_video = ""
