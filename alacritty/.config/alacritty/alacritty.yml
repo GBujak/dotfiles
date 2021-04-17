@@ -3,8 +3,8 @@
 # Fonts
 font:
     normal:
-        family: Ubuntu Mono
-    size: 14
+        family: Fira Mono
+    size: 12
 
 # Starting window size
 window:
@@ -15,6 +15,9 @@ window:
     x: 0
     y: 0
   gtk_theme_variant: dark
+
+env:
+  TERM: xterm-256color
 
 # Shift + space inserts underscore
 

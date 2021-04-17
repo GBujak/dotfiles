@@ -10,6 +10,7 @@ Plug 'junegunn/fzf.vim',
 Plug 'godlygeek/tabular',
 Plug 'plasticboy/vim-markdown',
 Plug 'kassio/neoterm',
+Plugin 'christoomey/vim-tmux-navigator',
 
 call plug#end()
 
