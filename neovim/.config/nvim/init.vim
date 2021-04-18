@@ -10,7 +10,6 @@ Plug 'junegunn/fzf.vim',
 Plug 'godlygeek/tabular',
 Plug 'plasticboy/vim-markdown',
 Plug 'kassio/neoterm',
-Plug 'christoomey/vim-tmux-navigator',
 
 call plug#end()
 
@@ -33,6 +32,8 @@ nnoremap <leader>T :NERDTreeToggle<CR>
 nnoremap <leader>z :GFiles --exclude-standard -o -c<CR>
 nnoremap <leader>g :Goyo<CR>
 nnoremap <leader>f :Format<CR>
+
+nnoremap <leader>l :resize<CR>:redraw<CR>
 
 " Terminal emulator
 nnoremap <leader>t :split<CR><C-w>j:Topen<CR>i
