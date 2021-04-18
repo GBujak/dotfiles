@@ -21,6 +21,10 @@ replacements = [
         "from": "set background=dark", 
         "to": "set background=light", 
         "f": "~/.config/nvim/init.vim"
+    }, {
+        "from": "#--theme=\\\"GitHub\\\"", 
+        "to": "--theme=\\\"GitHub\\\"", 
+        "f": "~/.config/bat/config"
     },
 ]
 
