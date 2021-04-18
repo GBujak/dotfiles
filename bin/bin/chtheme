@@ -1,0 +1,35 @@
+#!/bin/python3
+
+from sys import argv, stderr
+from os import system
+
+if len(argv) != 2 or not argv[1] in ['light', 'dark']:
+    print("Specify 'light' or 'dark'", file=stderr)
+
+new_theme = argv[1]
+
+replacements = [
+    {
+        "from": "colors: \\*dark",
+        "to": "colors: \\*light", 
+        "f": "~/.config/alacritty/alacritty.yml"
+    }, {
+        "from": "gtk_theme_variant: dark",
+        "to": "gtk_theme_variant: light", 
+        "f": "~/.config/alacritty/alacritty.yml"
+    }, {
+        "from": "set background=dark", 
+        "to": "set background=light", 
+        "f": "~/.config/nvim/init.vim"
+    },
+]
+
+if new_theme == "dark":
+    for r in replacements:
+        # Swap
+        tmp = r["from"]
+        r["from"] = r["to"]
+        r["to"] = tmp
+
+for r in replacements:
+    system(f"sed \"s/{r['from']}/{r['to']}/g\" {r['f']} -i")
