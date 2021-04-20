@@ -17,7 +17,7 @@ let g:gruvbox_contrast_light = 'hard'
 let g:gruvbox_contrast_dark = 'hard'
 set termguicolors
 let g:gruvbox_italic=1
-set background=dark "<-- toggle theme
+set background=light "<-- toggle theme
 colorscheme gruvbox
 
 " fzf.vim file preview theme
