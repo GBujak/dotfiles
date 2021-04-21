@@ -2,6 +2,17 @@
 
 export PATH=/home/gbujak/bin:$PATH
 
+alias ls=exa
+alias ll="exa -l"
+alias lla="exa -la"
+alias lt="exa -lTa"
+
+alias ga="git add"
+alias gc="git commit"
+alias gst="git status"
+alias gp="git push"
+alias gl="git pull"
+
 # Lines configured by zsh-newuser-install
 HISTFILE=~/.histfile
 HISTSIZE=1000
