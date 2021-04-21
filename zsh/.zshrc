@@ -1,8 +1,12 @@
+# Environment
+
+export PATH=/home/gbujak/bin:$PATH
+
 # Lines configured by zsh-newuser-install
 HISTFILE=~/.histfile
 HISTSIZE=1000
 SAVEHIST=1000
-setopt autocd extendedglob nomatch
+setopt autocd extendedglob # nomatch
 bindkey -v
 export KEYTIMEOUT=1
 # End of lines configured by zsh-newuser-install
