@@ -2,6 +2,11 @@
 
 export PATH=/home/gbujak/bin:$PATH
 
+export PATH="$HOME/.cargo/bin:$PATH"
+export CARGO_TARGET_DIR=~/.cargo/build_cache/
+
+# Aliases
+
 alias ls=exa
 alias ll="exa -l"
 alias lla="exa -la"
@@ -43,7 +48,7 @@ zstyle ':vcs_info:git:*' formats 'on branch %b'
  
 # Set up the prompt (with git branch name)
 setopt PROMPT_SUBST
-PROMPT='%B${PWD/#$HOME/~} > %b'
+PROMPT='%B%1~ > %b'
 RPROMPT=\$vcs_info_msg_0_
 
 # autoload -U promptinit && promptinit
