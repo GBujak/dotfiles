@@ -18,6 +18,8 @@ alias gst="git status"
 alias gp="git push"
 alias gl="git pull"
 
+function take() { mkdir -p $1 && cd $1 }
+
 # Lines configured by zsh-newuser-install
 HISTFILE=~/.histfile
 HISTSIZE=1000
