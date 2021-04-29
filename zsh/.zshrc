@@ -7,16 +7,21 @@ export CARGO_TARGET_DIR=~/.cargo/build_cache/
 
 # Aliases
 
-alias ls=exa
+alias ls="exa"
 alias ll="exa -l"
+alias la="exa -a"
 alias lla="exa -la"
-alias lt="exa -lTa"
+alias lt="exa -T"
+alias lta="exa -Ta"
+alias llt="exa -lT"
+alias llta="exa -lTa"
 
 alias ga="git add"
 alias gc="git commit"
 alias gst="git status"
 alias gp="git push"
 alias gl="git pull"
+alias glg="git log --oneline --graph"
 
 function take() { mkdir -p $1 && cd $1 }
 
