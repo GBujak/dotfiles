@@ -6,12 +6,14 @@ argv = argv[1:]
 
 audio = False
 volume = 100
-searches = []
+current_search_index = 0
+searches = [[]]
 searches_dont_include = []
 
 for index, val in enumerate([i for i in argv]):
     if val == 'a':
         audio = True
+
     elif val == 'vol' and index < len(argv) - 1:
         try:
             volume = int(argv[index + 1])
@@ -19,15 +21,24 @@ for index, val in enumerate([i for i in argv]):
         except:
             print("The next option after `vol` must be an integer")
             exit(1)
+
+    elif val == 'andthen':
+        searches.append([])
+        current_search_index += 1
+
     elif index not in searches_dont_include:
-        searches.append(val)
+        searches[current_search_index].append(val)
 
 no_video = ""
 if audio: no_video = "--no-video"
 
-search = " ".join(searches)
+searches_strs = [" ".join(search) for search in searches]
 
-command = f"mpv ytdl://ytsearch:\"{search}\" {no_video} --volume={volume}"
-print(f"Executing: {command}")
+for search in searches_strs:
+    command = f"mpv ytdl://ytsearch:\"{search}\" {no_video} --volume={volume}"
+    print(f"Executing: {command}")
+    exit_code = system(command)
+    if exit_code != 0:
+        exit(exit_code)
 
-exit(system(command))
+exit(0)
