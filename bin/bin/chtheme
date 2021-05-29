@@ -2,11 +2,33 @@
 
 from sys import argv, stderr
 from os import system
+import subprocess
+
+new_theme = ""
 
 if len(argv) != 2 or not argv[1] in ['light', 'dark']:
-    print("Specify 'light' or 'dark'", file=stderr)
+    print("Guessing theme from Adwaita variant", file=stderr)
 
-new_theme = argv[1]
+    proc = subprocess.Popen(
+        ['gsettings', 'get', 'org.gnome.desktop.interface', 'gtk-theme'],
+        stdout=subprocess.PIPE
+    )
+
+    line = str(proc.stdout.readline())
+    print(f"Got GTK theme: {line}")
+
+    if 'Adwaita-dark' in line:
+        new_theme = 'light'
+    elif 'Adwaita' in line:
+        new_theme = 'dark'
+    else:
+        print("Only works with adwaita themes, aborting", file=stderr)
+        exit(1)
+
+    print(f"Guessed change to {new_theme}", file=stderr)
+
+else:
+    new_theme = argv[1]
 
 replacements = [
     {
@@ -37,3 +59,15 @@ if new_theme == "dark":
 
 for r in replacements:
     system(f"sed \"s/{r['from']}/{r['to']}/g\" {r['f']} -i")
+
+new_gtk_theme = ""
+
+if new_theme == "dark":
+    new_gtk_theme = "Adwaita-dark"
+elif new_theme == "light":
+    new_gtk_theme = "Adwaita"
+else:
+    print(f"Error: new_theme not dark or light ({new_theme})", file=stderr)
+    exit(1)
+
+system(f"gsettings set org.gnome.desktop.interface gtk-theme {new_gtk_theme}")
