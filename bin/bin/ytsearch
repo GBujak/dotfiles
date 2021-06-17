@@ -4,15 +4,15 @@ from os import system
 from sys import argv, exit
 argv = argv[1:]
 
-audio = False
+audio = True
 volume = 100
 current_search_index = 0
 searches = [[]]
 searches_dont_include = []
 
 for index, val in enumerate([i for i in argv]):
-    if val == 'a':
-        audio = True
+    if val == 'vid':
+        audio = False
 
     elif val == 'vol' and index < len(argv) - 1:
         try:
