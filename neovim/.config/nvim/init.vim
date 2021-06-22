@@ -3,6 +3,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'scrooloose/nerdtree',
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'morhetz/gruvbox',
+Plug 'arcticicestudio/nord-vim',
 Plug 'jiangmiao/auto-pairs',
 Plug 'junegunn/goyo.vim',
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
