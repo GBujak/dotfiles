@@ -14,7 +14,7 @@ window:
   padding:
     x: 0
     y: 0
-  gtk_theme_variant: light
+  gtk_theme_variant: dark
 
 # Disable cursor blinking
 cursor:
@@ -82,5 +82,5 @@ schemes:
       cyan:    '0x8ec07c'
       white:   '0xebdbb2'
 
-colors: *light
+colors: *dark
 
