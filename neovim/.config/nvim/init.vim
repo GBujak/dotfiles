@@ -23,6 +23,7 @@ call plug#end()
 let mapleader = ' '
 nnoremap <leader>z :GFiles --exclude-standard -o -c<CR>
 nnoremap <leader>b :Buffers<CR>
+nnoremap <leader>B :wa<CR>:%bd<CR>
 
 " Terminal emulator
 nnoremap <leader>t :split<CR><C-w>j:Topen<CR>i
@@ -36,7 +37,7 @@ let g:gruvbox_contrast_dark = 'hard'
 set termguicolors
 let g:gruvbox_italic=1
 set background=dark "<-- toggle theme
-colorscheme tokyonight
+colorscheme gruvbox
 
 " Sign column always shown
 :set signcolumn=yes:1
