@@ -7,6 +7,7 @@ Plug 'folke/tokyonight.nvim',
 Plug 'cohama/lexima.vim',
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'neovim/nvim-lspconfig',
+Plug 'kabouzeid/nvim-lspinstall',
 Plug 'hrsh7th/nvim-compe',
 Plug 'ray-x/lsp_signature.nvim',
 
@@ -155,7 +156,7 @@ autocmd BufWritePre *.jsx lua vim.lsp.buf.formatting_sync(nil, 100)
 autocmd BufWritePre *.py lua vim.lsp.buf.formatting_sync(nil, 100)
 autocmd BufWritePre *.rs lua vim.lsp.buf.formatting_sync(nil, 100)
 
-" Setup language servers
+" Setup language server client
 lua << EOF
 
 function on_attach() 
@@ -167,10 +168,13 @@ function on_attach()
     })
 end
 
-require'lspconfig'.rust_analyzer.setup{on_attach=on_attach}
-require'lspconfig'.clangd.setup{on_attach=on_attach}
-require'lspconfig'.tsserver.setup{on_attach=on_attach}
-require'lspconfig'.pyright.setup{on_attach=on_attach}
+require'lspinstall'.setup() -- important
+
+local servers = require'lspinstall'.installed_servers()
+for _, server in pairs(servers) do
+  require'lspconfig'[server].setup{on_attach=on_attach}
+end
+
 EOF
 " End Lsp config
 
