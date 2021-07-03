@@ -3,7 +3,7 @@
 # Fonts
 font:
   normal:
-    family: Ubuntu Mono
+    family: Fantasque Sans Mono
   size: 14
 
 # Starting window size

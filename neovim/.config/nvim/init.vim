@@ -1,6 +1,8 @@
 call plug#begin('~/.vim/plugged')
 
-Plug 'morhetz/gruvbox',
+Plug 'rktjmp/lush.nvim',
+Plug 'npxbr/gruvbox.nvim',
+
 Plug 'arcticicestudio/nord-vim',
 Plug 'folke/tokyonight.nvim',
 
@@ -16,6 +18,8 @@ Plug 'junegunn/fzf.vim',
 
 Plug 'kassio/neoterm',
 Plug 'plasticboy/vim-markdown',
+
+Plug 'Xuyuanp/scrollbar.nvim',
 
 call plug#end()
 
@@ -264,3 +268,12 @@ vim.api.nvim_set_keymap("i", "<S-Tab>", "v:lua.s_tab_complete()", {expr = true})
 vim.api.nvim_set_keymap("s", "<S-Tab>", "v:lua.s_tab_complete()", {expr = true})
 
 EOF
+
+" Scrollbar configuration
+augroup ScrollbarInit
+  autocmd!
+  autocmd CursorMoved,VimResized,QuitPre * silent! lua require('scrollbar').show()
+  autocmd WinEnter,FocusGained           * silent! lua require('scrollbar').show()
+  autocmd WinLeave,BufLeave,BufWinLeave,FocusLost            * silent! lua require('scrollbar').clear()
+augroup end
+" End Scrollbar configuration
