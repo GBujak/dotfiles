@@ -3,8 +3,8 @@
 # Fonts
 font:
   normal:
-    family: Fantasque Sans Mono
-  size: 14
+    family: Fira Mono Medium
+  size: 12
 
 # Starting window size
 window:
