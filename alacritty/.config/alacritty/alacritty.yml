@@ -3,7 +3,7 @@
 # Fonts
 font:
   normal:
-    family: Fira Mono
+    family: Fira Code
   size: 12
 
 # Starting window size
