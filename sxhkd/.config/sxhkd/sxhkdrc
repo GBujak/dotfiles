@@ -140,6 +140,10 @@ XF86Audio{LowerVolume,RaiseVolume,Mute}
 XF86MonBrightness{Up,Down}
     light {-A 5, -U 5}
 
+# launch xfce settings manager
+super + alt + s
+    xfce4-settings-manager
+
 # media control
 XF86Audio{Next,Prev,Play,Stop}
     playerctl {next,previous,play-pause,stop}
