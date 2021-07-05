@@ -5,7 +5,9 @@ nitrogen --restore &
 nm-applet &
 setxkbmap pl &
 xfsettingsd &
-picom &
+
+# Chromium browsers tear when picom started immediately
+bash -c "sleep 5; picom" &
 
 wmname LG3D & # Fix java GUIs (intellij idea) not working with window managers
 xsetroot -cursor_name left_ptr &
