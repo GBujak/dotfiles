@@ -12,8 +12,8 @@ window:
     columns: 100
     lines: 40
   padding:
-    x: 0
-    y: 0
+    x: 5
+    y: 5
   gtk_theme_variant: light
 
 # Disable cursor blinking
