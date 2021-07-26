@@ -5,6 +5,7 @@ Plug 'npxbr/gruvbox.nvim',
 
 Plug 'arcticicestudio/nord-vim',
 Plug 'folke/tokyonight.nvim',
+Plug 'projekt0n/github-nvim-theme',
 
 Plug 'cohama/lexima.vim',
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
@@ -43,6 +44,12 @@ set termguicolors
 let g:gruvbox_italic=1
 set background=light "<-- toggle theme
 colorscheme gruvbox
+
+lua <<EOF
+require('github-theme').setup({ 
+themeStyle="light"
+})
+EOF
 
 " Sign column always shown
 :set signcolumn=yes:1

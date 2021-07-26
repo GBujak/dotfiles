@@ -44,6 +44,10 @@ replacements = [
         "to": "set background=light", 
         "f": "~/.config/nvim/init.vim"
     }, {
+        "from": "themeStyle=\\\"dark\\\"",
+        "to": "themeStyle=\\\"light\\\"",
+        "f": "~/.config/nvim/init.vim"
+    }, {
         "from": "--theme=\\\"gruvbox-dark\\\"", 
         "to": "--theme=\\\"gruvbox-light\\\"", 
         "f": "~/.config/bat/config"
