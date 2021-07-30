@@ -35,6 +35,16 @@ nnoremap <leader>B :wa<CR>:%bd<CR>
 nnoremap <leader>t :split<CR><C-w>j:Topen<CR>i
 tnoremap <ESC> <C-\><C-n>:q<CR>
 
+nnoremap Y y$
+
+nnoremap n nzzzv
+nnoremap N Nzzzv
+
+inoremap , ,<c-g>u
+inoremap . .<c-g>u
+inoremap ! !<c-g>u
+inoremap ? ?<c-g>u
+
 " ---------------> My bindings <---------------
 
 " Theme
