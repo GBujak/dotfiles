@@ -4,7 +4,7 @@
 font:
   normal:
     family: Fira Code Medium
-  size: 14
+  size: 13
 
 # Starting window size
 window:
