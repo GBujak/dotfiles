@@ -52,14 +52,14 @@ let g:gruvbox_contrast_light = 'hard'
 let g:gruvbox_contrast_dark = 'hard'
 set termguicolors
 let g:gruvbox_italic=1
-set background=light "<-- toggle theme
+set background=dark "<-- toggle theme
 colorscheme gruvbox
 
-lua <<EOF
-require('github-theme').setup({ 
-themeStyle="light"
-})
-EOF
+" lua <<EOF
+" require('github-theme').setup({ 
+" themeStyle="dark"
+" })
+" EOF
 
 " Sign column always shown
 :set signcolumn=yes:1

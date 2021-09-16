@@ -1,5 +1,5 @@
 # Set the theme to "TwoDark"
---theme="gruvbox-light"
+--theme="gruvbox-dark"
 #--theme=""
 
 # Use italic text on the terminal (not supported on all terminals)
