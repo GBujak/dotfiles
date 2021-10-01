@@ -1,8 +1,10 @@
 #!/bin/sh
 
+set -xe
+
 wkhtmltoimage \
     --minimum-font-size 30 \
-    http://plany.tu.kielce.pl/resource/g4635.html \
-    ~/Pictures/plan.png || exit 1;
+    https://plany.tu.kielce.pl/resource/g31631.html \
+    ~/Pictures/plan.png
 
-feh ~/Pictures/plan.png -F;
+eog ~/Pictures/plan.png
