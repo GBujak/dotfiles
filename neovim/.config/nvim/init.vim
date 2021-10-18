@@ -16,8 +16,8 @@ Plug 'junegunn/fzf.vim',
 
 Plug 'kassio/neoterm',
 
-Plug 'godlygeek/tabular',
-Plug 'plasticboy/vim-markdown',
+Plug 'vim-pandoc/vim-pandoc',
+Plug 'vim-pandoc/vim-pandoc-syntax' ,
 
 Plug 'Xuyuanp/scrollbar.nvim',
 
@@ -118,6 +118,7 @@ augroup end
 " set conceallevel=2
 
 " Other
+let g:pandoc#formatting#mode = 'ha'
 let g:vim_markdown_folding_disabled = 1
 let g:vim_markdown_math = 1
 let g:vim_markdown_frontmatter = 1
