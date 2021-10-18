@@ -3,14 +3,14 @@
 # Fonts
 font:
   normal:
-    family: Fira Code Medium
+    family: Noto Sans Mono Medium
   size: 13
 
 # Starting window size
 window:
   dimensions:
-    columns: 90
-    lines: 35
+    columns: 95
+    lines: 30
   padding:
     x: 5
     y: 5

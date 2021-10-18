@@ -2,10 +2,7 @@ call plug#begin('~/.vim/plugged')
 
 Plug 'rktjmp/lush.nvim',
 Plug 'npxbr/gruvbox.nvim',
-
 Plug 'arcticicestudio/nord-vim',
-Plug 'folke/tokyonight.nvim',
-Plug 'projekt0n/github-nvim-theme',
 
 Plug 'cohama/lexima.vim',
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
@@ -18,9 +15,13 @@ Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim',
 
 Plug 'kassio/neoterm',
+
+Plug 'godlygeek/tabular',
 Plug 'plasticboy/vim-markdown',
 
 Plug 'Xuyuanp/scrollbar.nvim',
+
+Plug 'junegunn/goyo.vim',
 
 call plug#end()
 
@@ -50,8 +51,8 @@ inoremap ? ?<c-g>u
 " Theme
 let g:gruvbox_contrast_light = 'hard'
 let g:gruvbox_contrast_dark = 'hard'
+let g:gruvbox_italic = 1
 set termguicolors
-let g:gruvbox_italic=1
 set background=dark "<-- toggle theme
 colorscheme gruvbox
 
@@ -68,7 +69,7 @@ colorscheme gruvbox
 set number relativenumber	" Show line numbers
 set linebreak	" Break lines at word (requires Wrap lines)
 set showbreak=+++	" Wrap-broken line prefix
-set textwidth=100	" Line wrap (number of cols)
+set textwidth=80	" Line wrap (number of cols)
 set showmatch	" Highlight matching brace
 set visualbell	" Use visual bell (no beeping)
  
@@ -110,11 +111,11 @@ set shortmess+=c
 " Line wrapping
 augroup auFileTypes
   autocmd!
-  autocmd FileType markdown setlocal textwidth=85
+  autocmd FileType markdown setlocal textwidth=80
 augroup end
 
 " Syntax concealing
-set conceallevel=2
+" set conceallevel=2
 
 " Other
 let g:vim_markdown_folding_disabled = 1
