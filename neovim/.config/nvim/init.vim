@@ -56,6 +56,9 @@ set termguicolors
 set background=dark "<-- toggle theme
 colorscheme gruvbox
 
+" Goyo config
+let g:goyo_width=90
+
 " lua <<EOF
 " require('github-theme').setup({ 
 " themeStyle="dark"
