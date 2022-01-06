@@ -8,7 +8,9 @@ export CARGO_TARGET_DIR=~/.cargo/build_cache/
 # Aliases
 
 alias ls="exa"
+alias lm="exa -s modified"
 alias ll="exa -l"
+alias llm="exa -l -s modified"
 alias la="exa -a"
 alias lla="exa -la"
 alias lt="exa -T"
@@ -85,3 +87,7 @@ preexec() { echo -ne '\e[5 q' ;} # Use beam shape cursor for each new prompt.
 # source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh 2>/dev/null
 # source /usr/share/fzf/completion.zsh
 # source /usr/share/fzf/key-bindings.zsh
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
