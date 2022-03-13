@@ -19,6 +19,7 @@
 
 
 
+(setq confirm-kill-emacs 'y-or-n-p)
 (setq inhibit-startup-message t)
 (menu-bar-mode -1)
 (toggle-scroll-bar -1)
@@ -29,12 +30,16 @@
 
 (set-frame-font "Ubuntu Mono 15" nil t)
 
+(use-package solarized-theme)
 (use-package gruvbox-theme
   :config
   (load-theme 'gruvbox-dark-hard t))
 
 (use-package command-log-mode)
 
+(use-package smooth-scrolling
+  :config
+  (smooth-scrolling-mode 1))
 
 
 ;;; IVY
