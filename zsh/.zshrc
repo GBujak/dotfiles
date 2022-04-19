@@ -7,16 +7,25 @@ export CARGO_TARGET_DIR=~/.cargo/build_cache/
 
 # Aliases
 
-alias ls="exa"
-alias lm="exa -s modified"
-alias ll="exa -l"
-alias llm="exa -l -s modified"
-alias la="exa -a"
-alias lla="exa -la"
-alias lt="exa -T"
-alias lta="exa -Ta"
-alias llt="exa -lT"
-alias llta="exa -lTa"
+if ! type "$foobar_command_name" > /dev/null; then
+    alias ls="ls"
+    alias ll="ls -l"
+    alias la="ls -a"
+    alias lla="ls -la"
+    alias lt="tree -sh"
+    alias lta="tree -sha"
+else 
+    alias ls="exa"
+    alias lm="exa -s modified"
+    alias ll="exa -l"
+    alias llm="exa -l -s modified"
+    alias la="exa -a"
+    alias lla="exa -la"
+    alias lt="exa -T"
+    alias lta="exa -Ta"
+    alias llt="exa -lT"
+    alias llta="exa -lTa"
+fi
 
 alias ga="git add"
 alias gc="git commit"
@@ -97,3 +106,4 @@ export NVM_DIR="$HOME/.nvm"
 export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
 
+export PATH="$(yarn global bin):$PATH"

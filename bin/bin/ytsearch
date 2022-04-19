@@ -2,6 +2,7 @@
 
 from os import system
 from sys import argv, exit
+from shutil import which
 argv = argv[1:]
 
 audio = True
@@ -34,8 +35,13 @@ if audio: no_video = "--no-video"
 
 searches_strs = [" ".join(search) for search in searches]
 
+mpv_command = "mpv"
+
+if which(mpv_command) == None:
+    mpv_command = "flatpak run io.mpv.Mpv"
+
 for search in searches_strs:
-    command = f"mpv ytdl://ytsearch:\"{search}\" {no_video} --volume={volume}"
+    command = f"{mpv_command} ytdl://ytsearch:\"{search}\" {no_video} --volume={volume}"
     print(f"Executing: {command}")
     exit_code = system(command)
     if exit_code != 0:
