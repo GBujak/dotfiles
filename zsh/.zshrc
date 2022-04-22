@@ -9,9 +9,9 @@ export CARGO_TARGET_DIR=~/.cargo/build_cache/
 
 if ! type "$foobar_command_name" > /dev/null; then
     alias ls="ls"
-    alias ll="ls -l"
+    alias ll="ls -lh"
     alias la="ls -a"
-    alias lla="ls -la"
+    alias lla="ls -lha"
     alias lt="tree -sh"
     alias lta="tree -sha"
 else 
