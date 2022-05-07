@@ -7,7 +7,7 @@ export CARGO_TARGET_DIR=~/.cargo/build_cache/
 
 # Aliases
 
-if ! type "$foobar_command_name" > /dev/null; then
+if ! type "exa" > /dev/null; then
     alias ls="ls"
     alias ll="ls -lh"
     alias la="ls -a"
