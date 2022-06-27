@@ -23,7 +23,7 @@ set $menu wofi --show=drun
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-output * bg /usr/share/backgrounds/default.png fill
+output * bg /usr/share/backgrounds/gnome/adwaita-d.jpg fill
 #
 # Example configuration:
 #
@@ -68,7 +68,7 @@ output * bg /usr/share/backgrounds/default.png fill
     # Kill focused window
     bindsym $mod+Shift+q kill
 
-    # Start your launcher
+    # Start your launchr
     bindsym $mod+d exec $menu
 
     # Drag floating windows by holding down $mod and left mouse button.
@@ -212,6 +212,16 @@ bar {
         background #323232
         inactive_workspace #32323200 #32323200 #5c5c5c
     }
+}
+
+# Remap keyboard
+
+input type:keyboard {
+    xkb_layout pl
+    xkb_options caps:escape
+
+    repeat_rate 100
+    repeat_delay 250
 }
 
 include /etc/sway/config.d/*
