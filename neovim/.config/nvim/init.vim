@@ -18,6 +18,8 @@ Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 
 Plug 'akinsho/toggleterm.nvim', {'tag' : 'v2.*'}
+
+Plug 'kyazdani42/nvim-web-devicons'
 Plug 'kyazdani42/nvim-tree.lua'
 call plug#end()
 
@@ -147,10 +149,10 @@ require("nvim-tree").setup({
     renderer = {
         icons = {
             show = {
-                file = false,
-                folder = false,
-                folder_arrow = false,
-                git = false,
+                file = true,
+                folder = true,
+                folder_arrow = true,
+                git = true,
             }
         }
     }
