@@ -27,6 +27,7 @@ Plug 'RRethy/nvim-base16'
 Plug 'Mofiqul/adwaita.nvim'
 
 Plug 'akinsho/bufferline.nvim', { 'tag': 'v2.*' }
+Plug 'folke/trouble.nvim'
 call plug#end()
 
 " completion
@@ -186,6 +187,12 @@ require("nvim-tree").setup({
 })
 EOF
 
+" --------------------> Diagnostics
+
+lua << EOF
+require("trouble").setup{}
+EOF
+
 nnoremap <leader>T :NvimTreeFindFileToggle<CR>
 
 " --------------------> Theme
@@ -221,9 +228,10 @@ set incsearch	" Searches for strings incrementally
  
 set autoindent	" Auto-indent new lines
 set expandtab	" Use spaces instead of tabs
-set shiftwidth=4	" Number of auto-indent spaces
 set smartindent	" Enable smart-indent
 set smarttab	" Enable smart-tabs
+
+set shiftwidth=4	" Number of auto-indent spaces
 set softtabstop=4	" Number of spaces per Tab
  
 " Advanced
@@ -303,11 +311,24 @@ nnoremap <silent> <C-n> <cmd>lua vim.lsp.diagnostic.goto_next()<CR>
 nnoremap <silent> <C-p> <cmd>lua vim.lsp.diagnostic.goto_prev()<CR>
 
 " Auto formatting
-autocmd BufWritePre *.js lua vim.lsp.buf.formatting_sync(nil, 100)
-autocmd BufWritePre *.jsx lua vim.lsp.buf.formatting_sync(nil, 100)
-autocmd BufWritePre *.py lua vim.lsp.buf.formatting_sync(nil, 100)
-autocmd BufWritePre *.rs lua vim.lsp.buf.formatting_sync(nil, 100)
+autocmd BufWritePre *.js lua vim.lsp.buf.formatting()
+autocmd BufWritePre *.ts lua vim.lsp.buf.formatting()
+autocmd BufWritePre *.jsx lua vim.lsp.buf.formatting()
+autocmd BufWritePre *.tsx lua vim.lsp.buf.formatting()
+autocmd BufWritePre *.vue lua vim.lsp.buf.formatting()
+autocmd BufWritePre *.py lua vim.lsp.buf.formatting()
+autocmd BufWritePre *.rs lua vim.lsp.buf.formatting()
+autocmd BufWritePre *.kt lua vim.lsp.buf.formatting()
 
+" Web indentation
+autocmd BufNewFile,BufReadPre,FileReadPre  *.html     setlocal shiftwidth=2 softtabstop=2
+autocmd BufNewFile,BufReadPre,FileReadPre  *.css      setlocal shiftwidth=2 softtabstop=2
+autocmd BufNewFile,BufReadPre,FileReadPre  *.ts       setlocal shiftwidth=2 softtabstop=2
+autocmd BufNewFile,BufReadPre,FileReadPre  *.tsx      setlocal shiftwidth=2 softtabstop=2
+autocmd BufNewFile,BufReadPre,FileReadPre  *.js       setlocal shiftwidth=2 softtabstop=2
+autocmd BufNewFile,BufReadPre,FileReadPre  *.jsx      setlocal shiftwidth=2 softtabstop=2
+autocmd BufNewFile,BufReadPre,FileReadPre  *.vue      setlocal shiftwidth=2 softtabstop=2
+autocmd BufNewFile,BufReadPre,FileReadPre  *.svelte   setlocal shiftwidth=2 softtabstop=2
 
 " Scrollbar configuration
 augroup ScrollbarInit
