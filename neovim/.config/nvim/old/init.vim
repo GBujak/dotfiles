@@ -12,6 +12,8 @@ Plug 'godlygeek/tabular',
 Plug 'plasticboy/vim-markdown',
 Plug 'kassio/neoterm',
 
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'},
+Plug 'akinsho/toggleterm.nvim', {'tag' : 'v2.*'},
 call plug#end()
 
 let g:gruvbox_contrast_light = 'hard'
@@ -37,8 +39,19 @@ nnoremap <leader>f :Format<CR>
 nnoremap <leader>l :resize<CR>:redraw<CR>
 
 " Terminal emulator
-nnoremap <leader>t :split<CR><C-w>j:Topen<CR>i
-tnoremap <ESC> <C-\><C-n>:q<CR>
+lua << EOF
+function _G.set_terminal_keymaps()
+  local opts = {buffer = 0}
+  vim.keymap.set('t', '<esc>', [[<C-\><C-n>]], opts)
+  vim.keymap.set('t', 'jk', [[<C-\><C-n>]], opts)
+  vim.keymap.set('t', '<C-h>', [[<Cmd>wincmd h<CR>]], opts)
+  vim.keymap.set('t', '<C-j>', [[<Cmd>wincmd j<CR>]], opts)
+  vim.keymap.set('t', '<C-k>', [[<Cmd>wincmd k<CR>]], opts)
+  vim.keymap.set('t', '<C-l>', [[<Cmd>wincmd l<CR>]], opts)
+end
+
+vim.cmd('autocmd! TermOpen term://* lua set_terminal_keymaps()')
+EOF
 
 " Markown configuration
 " Line wrapping
