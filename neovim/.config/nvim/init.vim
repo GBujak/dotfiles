@@ -21,6 +21,12 @@ Plug 'akinsho/toggleterm.nvim', {'tag' : 'v2.*'}
 
 Plug 'kyazdani42/nvim-web-devicons'
 Plug 'kyazdani42/nvim-tree.lua'
+Plug 'windwp/nvim-autopairs'
+
+Plug 'RRethy/nvim-base16'
+Plug 'Mofiqul/adwaita.nvim'
+
+Plug 'akinsho/bufferline.nvim', { 'tag': 'v2.*' }
 call plug#end()
 
 " completion
@@ -48,16 +54,19 @@ cmp.setup({
         require('luasnip').lsp_expand(args.body)
       end,
     },
-    window = {
-      -- completion = cmp.config.window.bordered(),
-      -- documentation = cmp.config.window.bordered(),
-    },
     mapping = cmp.mapping.preset.insert({
       ['<C-b>'] = cmp.mapping.scroll_docs(-4),
       ['<C-f>'] = cmp.mapping.scroll_docs(4),
       ['<C-Space>'] = cmp.mapping.complete(),
       ['<C-e>'] = cmp.mapping.abort(),
       ['<CR>'] = cmp.mapping.confirm({ select = true }),
+      ['<Tab>'] = function(fallback)
+        if cmp.visible() then
+          cmp.select_next_item()
+        else
+          fallback()
+        end
+      end
     }),
     sources = cmp.config.sources({
       { name = 'nvim_lsp' },
@@ -102,22 +111,34 @@ for index,serverName in pairs(require'mason-lspconfig'.get_installed_servers()) 
 end
 EOF
 
+" --------------------> autopairs
+
+lua << EOF
+require("nvim-autopairs").setup {}
+local cmp_autopairs = require('nvim-autopairs.completion.cmp')
+local cmp = require('cmp')
+cmp.event:on(
+  'confirm_done',
+  cmp_autopairs.on_confirm_done()
+)
+EOF
+
 " ---------------> My bindings <---------------
 
 let mapleader = ' '
 nnoremap <leader>z :GFiles --exclude-standard -o -c<CR>
 nnoremap <leader>b :Buffers<CR>
-nnoremap <leader>B :wa<CR>:%bd<CR>
+nnoremap <leader>B :w<CR>:bd<CR>
+nnoremap <leader>O :wa<CR>:%bd<CR>
+
+nnoremap gn :bnext<CR>
+nnoremap gN :bprevious<CR>
 
 " Terminal emulator
 lua << EOF
 function _G.set_terminal_keymaps()
   local opts = {buffer = 0}
   vim.keymap.set('t', 'jk', [[<C-\><C-n>]], opts)
-  vim.keymap.set('t', '<C-h>', [[<Cmd>wincmd h<CR>]], opts)
-  vim.keymap.set('t', '<C-j>', [[<Cmd>wincmd j<CR>]], opts)
-  vim.keymap.set('t', '<C-k>', [[<Cmd>wincmd k<CR>]], opts)
-  vim.keymap.set('t', '<C-l>', [[<Cmd>wincmd l<CR>]], opts)
 end
 
 vim.cmd('autocmd! TermOpen term://* lua set_terminal_keymaps()')
@@ -126,6 +147,12 @@ require("toggleterm").setup{}
 EOF
 
 nnoremap <leader>t :ToggleTerm size=80 direction=vertical<CR>
+
+" --------------------> Buffer line
+
+lua << EOF
+require("bufferline").setup{}
+EOF
 
 " NERD Tree
 
@@ -170,6 +197,11 @@ set termguicolors
 set background=dark "<-- toggle theme
 
 " --------------------> Misc config
+
+colorscheme adwaita
+
+" make system copy buffer the default
+set clipboard=unnamedplus
 
 " Sign column always shown
 :set signcolumn=yes:1
