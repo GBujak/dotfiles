@@ -205,6 +205,7 @@ set background=dark "<-- toggle theme
 
 " --------------------> Misc config
 
+" let g:adwaita_darker = v:true
 colorscheme adwaita
 
 " make system copy buffer the default
