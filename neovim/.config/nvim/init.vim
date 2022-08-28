@@ -307,8 +307,8 @@ nnoremap <leader>r <cmd>lua vim.lsp.buf.rename()<CR>
 nnoremap <leader>a <cmd>lua vim.lsp.buf.code_action()<CR>
 
 " nnoremap <silent> <C-k> <cmd>lua vim.lsp.buf.signature_help()<CR>
-nnoremap <silent> <C-n> <cmd>lua vim.lsp.diagnostic.goto_next()<CR>
-nnoremap <silent> <C-p> <cmd>lua vim.lsp.diagnostic.goto_prev()<CR>
+nnoremap <silent> <C-n> <cmd>lua vim.diagnostic.goto_next()<CR>
+nnoremap <silent> <C-p> <cmd>lua vim.diagnostic.goto_prev()<CR>
 
 " Auto formatting
 autocmd BufWritePre *.js lua vim.lsp.buf.formatting()
