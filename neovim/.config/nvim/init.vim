@@ -200,7 +200,7 @@ let g:gruvbox_contrast_light = 'hard'
 let g:gruvbox_contrast_dark = 'hard'
 let g:gruvbox_italic = 1
 set termguicolors
-set background=dark "<-- toggle theme
+set background=light "<-- toggle theme
 
 " --------------------> Misc config
 
