@@ -200,7 +200,6 @@ let g:gruvbox_contrast_light = 'hard'
 let g:gruvbox_contrast_dark = 'hard'
 let g:gruvbox_italic = 1
 set termguicolors
-set background=light "<-- toggle theme
 
 " --------------------> Misc config
 
@@ -311,14 +310,15 @@ nnoremap <silent> <C-n> <cmd>lua vim.diagnostic.goto_next()<CR>
 nnoremap <silent> <C-p> <cmd>lua vim.diagnostic.goto_prev()<CR>
 
 " Auto formatting
-autocmd BufWritePre *.js lua vim.lsp.buf.formatting()
-autocmd BufWritePre *.ts lua vim.lsp.buf.formatting()
-autocmd BufWritePre *.jsx lua vim.lsp.buf.formatting()
-autocmd BufWritePre *.tsx lua vim.lsp.buf.formatting()
-autocmd BufWritePre *.vue lua vim.lsp.buf.formatting()
-autocmd BufWritePre *.py lua vim.lsp.buf.formatting()
-autocmd BufWritePre *.rs lua vim.lsp.buf.formatting()
-autocmd BufWritePre *.kt lua vim.lsp.buf.formatting()
+" autocmd BufWritePre *.js lua vim.lsp.buf.formatting()
+" autocmd BufWritePre *.ts lua vim.lsp.buf.formatting()
+" autocmd BufWritePre *.jsx lua vim.lsp.buf.formatting()
+" autocmd BufWritePre *.tsx lua vim.lsp.buf.formatting()
+" autocmd BufWritePre *.vue lua vim.lsp.buf.formatting()
+" autocmd BufWritePre *.py lua vim.lsp.buf.formatting()
+" autocmd BufWritePre *.rs lua vim.lsp.buf.formatting()
+" autocmd BufWritePre *.kt lua vim.lsp.buf.formatting()
+autocmd BufWritePre *.* lua vim.lsp.buf.formatting()
 
 " Web indentation
 autocmd BufNewFile,BufReadPre,FileReadPre  *.html     setlocal shiftwidth=2 softtabstop=2
