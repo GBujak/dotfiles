@@ -305,15 +305,7 @@ nnoremap <silent> <C-n> <cmd>lua vim.diagnostic.goto_next()<CR>
 nnoremap <silent> <C-p> <cmd>lua vim.diagnostic.goto_prev()<CR>
 
 " Auto formatting
-" autocmd BufWritePre *.js lua vim.lsp.buf.formatting()
-" autocmd BufWritePre *.ts lua vim.lsp.buf.formatting()
-" autocmd BufWritePre *.jsx lua vim.lsp.buf.formatting()
-" autocmd BufWritePre *.tsx lua vim.lsp.buf.formatting()
-" autocmd BufWritePre *.vue lua vim.lsp.buf.formatting()
-" autocmd BufWritePre *.py lua vim.lsp.buf.formatting()
-" autocmd BufWritePre *.rs lua vim.lsp.buf.formatting()
-" autocmd BufWritePre *.kt lua vim.lsp.buf.formatting()
-autocmd BufWritePre *.* lua vim.lsp.buf.formatting()
+autocmd BufWritePre *.* lua if vim.lsp.buf.format ~= nil then vim.lsp.buf.format() end
 
 " Web indentation
 autocmd BufNewFile,BufReadPre,FileReadPre  *.html     setlocal shiftwidth=2 softtabstop=2
