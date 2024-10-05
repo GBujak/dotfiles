@@ -1,4 +1,6 @@
 call plug#begin('~/.vim/plugged')
+Plug 'tpope/vim-sensible'
+
 Plug 'williamboman/mason.nvim'
 Plug 'williamboman/mason-lspconfig.nvim'
 Plug 'neovim/nvim-lspconfig'
@@ -28,6 +30,8 @@ Plug 'Mofiqul/adwaita.nvim'
 
 Plug 'akinsho/bufferline.nvim'
 Plug 'folke/trouble.nvim'
+
+Plug 'folke/zen-mode.nvim'
 call plug#end()
 
 " completion
@@ -138,7 +142,7 @@ nnoremap gN :bprevious<CR>
 lua << EOF
 function _G.set_terminal_keymaps()
   local opts = {buffer = 0}
-  vim.keymap.set('t', 'jk', [[<C-\><C-n>]], opts)
+  vim.keymap.set('t', [[<C-\>]], [[<C-\><C-n>]], opts)
 end
 
 vim.cmd('autocmd! TermOpen term://* lua set_terminal_keymaps()')
@@ -259,6 +263,9 @@ augroup end
 
 " Syntax concealing
 " set conceallevel=2
+
+" Caret may not approach the edge of the screen closer than 5 lines
+set scrolloff=5
 
 " Treesitter config
 lua <<EOF
