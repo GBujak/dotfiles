@@ -1,6 +1,7 @@
 # Environment
 
 export PATH=/home/gbujak/bin:$PATH
+export EDITOR=nvim
 
 export PATH="$HOME/.local/bin:$HOME/.cargo/bin:$PATH"
 export CARGO_TARGET_DIR=~/.cargo/build_cache/
