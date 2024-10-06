@@ -155,7 +155,16 @@ nnoremap <leader>t :ToggleTerm size=80 direction=vertical<CR>
 " --------------------> Buffer line
 
 lua << EOF
-require("bufferline").setup{}
+require("bufferline").setup{
+    options = {
+        custom_filter = function(buf_number, buf_numbers)
+            -- don't show buffers without name
+            if vim.fn.bufname(buf_number) ~= "" then
+                return true
+            end
+        end
+    }
+}
 EOF
 
 " NERD Tree
