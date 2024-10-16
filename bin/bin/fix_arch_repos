@@ -1,0 +1,5 @@
+#!/bin/zsh
+
+set -xe
+
+sudo reflector --country 'United States' --latest 200 -n 20 --protocol http --protocol https --sort rate --save /etc/pacman.d/mirrorlist
