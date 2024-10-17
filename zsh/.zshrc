@@ -6,6 +6,9 @@ export EDITOR=nvim
 export PATH="$HOME/.local/bin:$HOME/.cargo/bin:$PATH"
 export CARGO_TARGET_DIR=~/.cargo/build_cache/
 
+# Add deno completions to search path
+if [[ ":$FPATH:" != *":/home/gbujak/.zsh/completions:"* ]]; then export FPATH="/home/gbujak/.zsh/completions:$FPATH"; fi
+
 # Aliases
 
 if ! type "exa" > /dev/null; then
@@ -114,3 +117,4 @@ export PATH="$(yarn global bin):$PATH"
 
 export DENO_INSTALL="/home/gbujak/.deno"
 export PATH="$DENO_INSTALL/bin:$PATH"
+. "/home/gbujak/.deno/env"
