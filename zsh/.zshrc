@@ -113,8 +113,6 @@ export NVM_DIR="$HOME/.nvm"
 export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
 
-export PATH="$(yarn global bin):$PATH"
-
 export DENO_INSTALL="/home/gbujak/.deno"
 export PATH="$DENO_INSTALL/bin:$PATH"
 . "/home/gbujak/.deno/env"
