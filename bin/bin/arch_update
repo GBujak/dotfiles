@@ -1,0 +1,6 @@
+#!/bin/bash
+
+sudo pacman -Syyu --noconfirm \
+    && yay -Syu --noconfirm \
+    && flatpak remove --unused \
+    && flatpak update -y
