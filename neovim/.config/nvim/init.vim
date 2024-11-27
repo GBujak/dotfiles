@@ -129,6 +129,9 @@ EOF
 
 " ---------------> My bindings <---------------
 
+nnoremap <expr> k (v:count == 0 ? 'gk' : 'k')
+nnoremap <expr> j (v:count == 0 ? 'gj' : 'j')
+
 let mapleader = ' '
 nnoremap <leader>z :GFiles --exclude-standard -o -c<CR>
 nnoremap <leader>b :Buffers<CR>
