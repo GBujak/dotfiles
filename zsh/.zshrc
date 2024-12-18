@@ -31,6 +31,10 @@ else
     alias llta="exa -lTa"
 fi
 
+if (($+commands[microk8s.kubectl])); then
+    alias k="microk8s.kubectl"
+fi
+
 alias ga="git add"
 alias gc="git commit"
 alias gst="git status"
