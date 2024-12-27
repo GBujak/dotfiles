@@ -1,0 +1,6 @@
+font-family = "Monaspace Xenon"
+font-size = 22
+window-height = 40
+window-width = 100
+window-theme = system
+theme = light:rose-pine-dawn,dark:rose-pine
