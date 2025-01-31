@@ -1,0 +1,32 @@
+#!/bin/python
+
+import time
+import psutil
+import os
+
+def main():
+    old_value_mbps = 0
+    threshold = 0
+
+    while True:
+        new_value = psutil.net_io_counters().bytes_sent
+        new_value_mbps = (new_value / (1024.0 * 1024)) * 8.0
+
+        diff = new_value_mbps - old_value_mbps
+
+        if diff < 0.1:
+            threshold += 1
+            print(f"will shutdown soon [{threshold}/30]")
+
+            if threshold >= 30:
+                print("shutting down")
+                os.system("systemctl poweroff")
+                return
+
+
+        old_value_mbps = new_value_mbps
+        time.sleep(1)
+
+
+if __name__ == '__main__':
+    main()
