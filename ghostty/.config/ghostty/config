@@ -1,5 +1,7 @@
-font-family = "Monaspace Xenon"
-font-size = 16
+font-family = "Monaspace Xenon Var"
+font-variation = wght=300
+font-variation-bold = wght=500
+font-size = 15
 window-height = 40
 window-width = 100
 window-theme = system

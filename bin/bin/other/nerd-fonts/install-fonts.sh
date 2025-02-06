@@ -1,6 +1,11 @@
-#!/bin/sh
+#!/bin/bash
 
 set -xe
 
-sudo cp -r ./ubuntu-mono /usr/share/fonts
+for i in fonts/* 
+do 
+    sudo cp -r "$i" /usr/share/fonts
+done
+
 sudo fc-cache -f -v
+fc-cache -f -v
