@@ -1,8 +1,8 @@
-font-family = "Monaspace Xenon Var"
+font-family = "Aporetic Sans Mono"
 font-variation = wght=300
 font-variation-bold = wght=500
 font-size = 15
 window-height = 40
-window-width = 100
+window-width = 128
 window-theme = system
 theme = light:rose-pine-dawn,dark:rose-pine
