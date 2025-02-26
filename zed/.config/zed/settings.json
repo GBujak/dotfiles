@@ -8,13 +8,14 @@
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
   "ui_font_size": 24,
-  "buffer_font_size": 24,
+  "buffer_font_size": 27,
+  "buffer_line_height": { "custom": 1.6 },
   "theme": {
     "mode": "system",
     "light": "One Light",
     "dark": "One Dark"
   },
   "vim_mode": true,
-  "buffer_font_family": "Monaspace Xenon",
-  "buffer_font_weight": 600
+  "buffer_font_family": "Aporetic Sans Mono",
+  "buffer_font_weight": 500
 }
