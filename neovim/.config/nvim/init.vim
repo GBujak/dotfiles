@@ -271,6 +271,7 @@ set shortmess+=c
 augroup auFileTypes
   autocmd!
   autocmd FileType markdown setlocal textwidth=80
+  autocmd FileType markdown setlocal formatoptions=tca
 augroup end
 
 " Syntax concealing
