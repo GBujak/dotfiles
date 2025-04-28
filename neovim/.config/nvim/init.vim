@@ -272,6 +272,8 @@ augroup auFileTypes
   autocmd!
   autocmd FileType markdown setlocal textwidth=80
   autocmd FileType markdown setlocal formatoptions=tca
+  autocmd FileType typst setlocal textwidth=80
+  autocmd FileType typst setlocal formatoptions=tca
 augroup end
 
 " Syntax concealing
