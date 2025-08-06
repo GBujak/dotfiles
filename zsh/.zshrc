@@ -3,7 +3,7 @@
 export PATH=/home/gbujak/bin:$PATH
 export EDITOR=nvim
 
-export PATH="$HOME/.local/bin:$HOME/.cargo/bin:$PATH"
+export PATH="$HOME/.local/bin:$HOME/.cargo/bin:$HOME/go/bin:$PATH"
 export CARGO_TARGET_DIR=~/.cargo/build_cache/
 
 # Add deno completions to search path
