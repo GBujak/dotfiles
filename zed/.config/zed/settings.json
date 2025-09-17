@@ -7,15 +7,17 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
-  "ui_font_size": 24,
-  "buffer_font_size": 27,
+  "ui_font_size": 27,
+  "ui_font_family": "Adwaita Sans",
+  "buffer_font_size": 25,
   "buffer_line_height": { "custom": 1.6 },
   "theme": {
     "mode": "system",
-    "light": "One Light",
-    "dark": "One Dark"
+    "light": "Nord Light",
+    "dark": "Nord"
   },
   "vim_mode": true,
-  "buffer_font_family": "Aporetic Sans Mono",
-  "buffer_font_weight": 500
+  "buffer_font_family": "Comic Code Ligatures",
+  "buffer_font_weight": 500,
+  "relative_line_numbers": true
 }
