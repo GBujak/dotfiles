@@ -20,5 +20,11 @@
   "toolbar": { "breadcrumbs": false, "quick_actions": false },
   "project_panel": { "entry_spacing": "standard" },
   "tabs": { "file_icons": true },
-  "git": { "inline_blame": { "enabled": false } }
+  "git": { "inline_blame": { "enabled": false } },
+  "languages": {
+    "Markdown": {
+      "preferred_line_length": 80,
+      "soft_wrap": "bounded"
+    }
+  }
 }
