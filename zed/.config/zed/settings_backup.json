@@ -1,29 +1,13 @@
 {
-  "outline_panel": {
-    "dock": "left"
-  },
-  "collaboration_panel": {
-    "dock": "left"
-  },
-  "agent": {
-    "dock": "right",
-    "favorite_models": [],
-    "model_parameters": []
-  },
-  "git_panel": {
-    "dock": "left"
-  },
-  "agent_buffer_font_size": 25.0,
-  "agent_ui_font_size": 25.0,
   "agent_servers": {
     "codex-acp": {
-      "type": "registry",
-    },
+      "type": "registry"
+    }
   },
   "icon_theme": "Zed (Default)",
   "telemetry": {
     "diagnostics": true,
-    "metrics": false,
+    "metrics": false
   },
   "base_keymap": "VSCode",
   "ui_font_size": 25,
@@ -32,21 +16,20 @@
   "theme": {
     "mode": "system",
     "light": "Ayu Light",
-    "dark": "Ayu Dark",
+    "dark": "Ayu Dark"
   },
   "vim_mode": true,
   "buffer_font_family": "Comic Code Ligatures",
-  "relative_line_numbers": "enabled",
+  "relative_line_numbers": true,
   "buffer_line_height": { "custom": 1.5 },
   "toolbar": { "breadcrumbs": false, "quick_actions": false },
-  "project_panel": { "dock": "left",
-                     "entry_spacing": "standard" },
+  "project_panel": { "entry_spacing": "standard" },
   "tabs": { "file_icons": true },
   "git": { "inline_blame": { "enabled": false } },
   "languages": {
     "Markdown": {
       "preferred_line_length": 80,
-      "soft_wrap": "bounded",
-    },
-  },
+      "soft_wrap": "bounded"
+    }
+  }
 }

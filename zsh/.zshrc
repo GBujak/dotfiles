@@ -31,6 +31,8 @@ else
     alias llta="exa -lTa"
 fi
 
+alias npm="pnpm"
+
 if (($+commands[microk8s.kubectl])); then
     alias k="microk8s.kubectl"
 fi
@@ -119,3 +121,6 @@ export SDKMAN_DIR="$HOME/.sdkman"
 export DENO_INSTALL="/home/gbujak/.deno"
 export PATH="$DENO_INSTALL/bin:$PATH"
 . "/home/gbujak/.deno/env"
+export PYENV_ROOT="$HOME/.pyenv"
+[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init - zsh)"
