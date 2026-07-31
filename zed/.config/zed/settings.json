@@ -23,7 +23,7 @@
     },
   },
   "icon_theme": {
-    "mode": "light",
+    "mode": "dark",
     "light": "Zed (Default)",
     "dark": "Zed (Default)"
   },
@@ -36,9 +36,9 @@
   "ui_font_family": "Adwaita Sans",
   "buffer_font_size": 26.0,
   "theme": {
-    "mode": "light",
+    "mode": "dark",
     "light": "JetBrains Islands Light",
-    "dark": "Adwaita Dark",
+    "dark": "JetBrains Dark",
   },
   "vim_mode": true,
   "buffer_font_family": "Comic Code Ligatures",

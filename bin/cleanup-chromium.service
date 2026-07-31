@@ -1,0 +1,11 @@
+[Unit]
+Description=Clean up stale Chromium lock files on boot
+# Wait until the user local filesystems are mounted
+After=local-fs.target
+
+[Service]
+Type=oneshot
+ExecStart=/bin/rm -f %h/.config/chromium/SingletonLock %h/.config/chromium/SingletonCookie %h/.config/chromium/SingletonSocket
+
+[Install]
+WantedBy=default.target
