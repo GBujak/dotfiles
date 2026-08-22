@@ -120,10 +120,18 @@ export SDKMAN_DIR="$HOME/.sdkman"
 
 export DENO_INSTALL="/home/gbujak/.deno"
 export PATH="$DENO_INSTALL/bin:$PATH"
-. "/home/gbujak/.deno/env"
+
+if [[ -f "/home/gbujak/.deno/env" ]]; then
+    . "/home/gbujak/.deno/env"
+fi
+
 export PYENV_ROOT="$HOME/.pyenv"
 [[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init - zsh)"
+
+if type "$pyenv" > /dev/null; then
+    eval "$(pyenv init - zsh)"
+fi
+
 
 # pnpm
 export PNPM_HOME="/home/gbujak/.local/share/pnpm"
