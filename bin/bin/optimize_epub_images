@@ -1,0 +1,83 @@
+#!/bin/python
+
+import os
+import subprocess
+import shutil
+
+def optimize_epubs():
+    current_dir = os.getcwd()
+    # Find all epub files in the current directory
+    epub_files = [f for f in os.listdir(current_dir) if f.lower().endswith('.epub')]
+
+    if not epub_files:
+        print("No EPUB files found in the current directory.")
+        return
+
+    for epub in epub_files:
+        print(f"\nProcessing: {epub}")
+        temp_dir = f"temp_ext_{epub}"
+        output_epub = f"opt_{epub}"
+
+        # 1. Create a clean temporary directory
+        if os.path.exists(temp_dir):
+            shutil.rmtree(temp_dir)
+        os.makedirs(temp_dir)
+
+        try:
+            # 2. Extract the EPUB
+            print("  Extracting archive...")
+            subprocess.run(["unzip", "-q", epub, "-d", temp_dir], check=True)
+
+            # 3. Optimize JPEGs using jpegoptim
+            print("  Optimizing JPEGs...")
+            jpeg_cmd = (
+                f'find "{temp_dir}" -type f \\( -iname "*.jpg" -o -iname "*.jpeg" \\) '
+                f'-exec jpegoptim --max=80 -q {{}} +'
+            )
+            subprocess.run(["bash", "-c", jpeg_cmd])
+
+            # 4. Optimize PNGs using pngquant
+            print("  Optimizing PNGs...")
+            # --skip-if-larger ensures we don't accidentally increase file size
+            png_cmd = (
+                f'find "{temp_dir}" -type f -iname "*.png" '
+                f'-exec pngquant --ext .png --force --skip-if-larger 256 {{}} +'
+            )
+            subprocess.run(["bash", "-c", png_cmd])
+
+            # 5. Repack the EPUB correctly
+            print("  Repacking EPUB...")
+            
+            # The mimetype must be stored first and uncompressed (-0)
+            zip_cmd_mimetype = f'zip -q0X "../{output_epub}" mimetype'
+            # The rest of the files can be compressed normally (-9), excluding mimetype
+            zip_cmd_rest = f'zip -q9rX "../{output_epub}" * -x mimetype'
+
+            mimetype_path = os.path.join(temp_dir, "mimetype")
+            if os.path.exists(mimetype_path):
+                # Run the zip commands from inside the temporary directory
+                subprocess.run(["bash", "-c", zip_cmd_mimetype], cwd=temp_dir, check=True)
+                subprocess.run(["bash", "-c", zip_cmd_rest], cwd=temp_dir, check=True)
+            else:
+                print(f"  Warning: No 'mimetype' file found in {epub}. Packing as standard ZIP.")
+                subprocess.run(["bash", "-c", f'zip -q9rX "../{output_epub}" *'], cwd=temp_dir, check=True)
+
+            print(f"  Success! Saved as: {output_epub}")
+
+        except subprocess.CalledProcessError as e:
+            print(f"  Error processing {epub}. Command failed: {e}")
+        finally:
+            # 6. Clean up temporary extraction folder
+            if os.path.exists(temp_dir):
+                shutil.rmtree(temp_dir)
+
+if __name__ == "__main__":
+    # Ensure required system binaries are available
+    required_cmds = ["unzip", "zip", "jpegoptim", "pngquant"]
+    missing = [cmd for cmd in required_cmds if shutil.which(cmd) is None]
+    
+    if missing:
+        print(f"Error: Missing required system binaries: {', '.join(missing)}")
+        print("Please install them before running this script.")
+    else:
+        optimize_epubs()
