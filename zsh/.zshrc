@@ -76,10 +76,10 @@ precmd() { vcs_info }
 
 # Format the vcs_info_msg_0_ variable
 zstyle ':vcs_info:git:*' formats 'on branch %b'
- 
-# Set up the prompt (with git branch name)
+
+# Set up the prompt with Distrobox indicator before the >
 setopt PROMPT_SUBST
-PROMPT='%B%1~ > %b'
+PROMPT='%B%1~ ${CONTAINER_ID:+📦 }> %b'
 RPROMPT=\$vcs_info_msg_0_
 
 # autoload -U promptinit && promptinit
