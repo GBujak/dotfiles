@@ -1,0 +1,11 @@
+[Unit]
+Description=Set touchpad and mouse acceleration profile to flat
+After=graphical-session.target
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/gsettings set org.gnome.desktop.peripherals.touchpad accel-profile 'flat'
+ExecStart=/usr/bin/gsettings set org.gnome.desktop.peripherals.mouse accel-profile 'flat'
+
+[Install]
+WantedBy=graphical-session.target
